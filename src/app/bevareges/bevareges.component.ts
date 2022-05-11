@@ -9,7 +9,9 @@ import { Observable } from 'rxjs';
 export class BevaregesComponent implements OnInit {
   @Input() bevarege = 'tea';
   @Output() newBevaregsEvent = new EventEmitter<string>();
-  inpText: string = '';
+  inpText!: string;
+
+  title: string = 'this is Durga';
 
   constructor() {}
 
@@ -21,8 +23,9 @@ export class BevaregesComponent implements OnInit {
     this.newBevaregsEvent.emit(this.inpText);
   }
 
-  eventHandler(event: any) {
-    console.log(event.target.value);
-    this.inpText = event.target.value;
-  }
+  // eventHandler(event: any) {
+  // console.log(event.target.value);
+  // this.inpText = event.target.value;
+  // }
+  // }
 }

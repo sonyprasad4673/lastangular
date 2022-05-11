@@ -3,7 +3,27 @@
     <ul>
         <li *ngFor="let bev of beverage">{{bev}}</li>
     </ul>
-
     <app-bevareges [bevareges]="currentBeverage" (newBevaregsEvent)="addBeverage($event)"></app-bevareges>
+</div>
 
+<h3>Two way binding</h3>
+<div class="container">
+    <input type="text" [(ngModel)]="title">
+    <h2>{{title}}</h2>
+</div>
+
+<h3>{{title1}}</h3>
+<div class="container">
+    <!-- interpolation  booleans value cannot be worked-->
+    <input type="text" value={{name}} disabled="{{disabled}}">
+    <br>
+    <br>
+    <!-- property-binding -->
+    <input type=" text " [value]="name" [disabled]="disabled">
+</div>
+
+<h3>Angular property binding & Event binding</h3>
+<div class="container">
+    <button class="btn btn-primary" [disabled]="!allowNewuser" (click)="changeUserCreatedStatus()"> Add user</button>
+    <div>{{userCreatedStatus}}</div>
 </div>

@@ -9,7 +9,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import * as PlotlyJs from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
@@ -31,7 +31,13 @@ PlotlyModule.plotlyjs = PlotlyJs;
     BevaregesComponent,
     ParentCComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, PlotlyModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    PlotlyModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
