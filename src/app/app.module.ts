@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import * as PlotlyJs from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import { GraphsComponent } from './graphs/graphs.component';
+import { BevaregesComponent } from './bevareges/bevareges.component';
+import { ParentCComponent } from './parent-c/parent-c.component';
 
 PlotlyModule.plotlyjs = PlotlyJs;
 
@@ -26,6 +28,8 @@ PlotlyModule.plotlyjs = PlotlyJs;
     HeaderComponent,
     HomeComponent,
     GraphsComponent,
+    BevaregesComponent,
+    ParentCComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, PlotlyModule],
   providers: [],

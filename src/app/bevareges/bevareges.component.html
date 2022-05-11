@@ -1,0 +1,7 @@
+<div class="child">
+    <h2>child Component</h2>
+    <p>Today's beveragess: <strong>{{bevarege}}</strong></p>
+    <label for="beverage-input">Add a Beverage: </label>
+    <input type="text" id="beverage-input" (input)="eventHandler($event)" />
+    <button (click)="addNewBevareges()">Add</button>
+</div>

@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CanActivate } from '@angular/router';
+import { BevaregesComponent } from './bevareges/bevareges.component';
+import { ParentCComponent } from './parent-c/parent-c.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'graphs', component: GraphsComponent },
+  { path: 'bevarges', component: BevaregesComponent },
+  { path: 'parentC', component: ParentCComponent },
 ];
 
 @NgModule({
