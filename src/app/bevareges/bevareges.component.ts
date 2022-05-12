@@ -11,8 +11,6 @@ export class BevaregesComponent implements OnInit {
   @Output() newBevaregsEvent = new EventEmitter<string>();
   inpText!: string;
 
-  title: string = 'this is Durga';
-
   constructor() {}
 
   ngOnInit(): void {}
