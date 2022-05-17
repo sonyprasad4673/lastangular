@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { CanActivate } from '@angular/router';
 import { BevaregesComponent } from './bevareges/bevareges.component';
 import { ParentCComponent } from './parent-c/parent-c.component';
+import { AppChildComponent } from './app-child/app-child.component';
+import { AppParentComponent } from './app-parent/app-parent.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'graphs', component: GraphsComponent },
   { path: 'bevarges', component: BevaregesComponent },
   { path: 'parentC', component: ParentCComponent },
+  { path: 'app-child', component: AppChildComponent },
+  { path: 'app-parents', component: AppParentComponent },
 ];
 
 @NgModule({

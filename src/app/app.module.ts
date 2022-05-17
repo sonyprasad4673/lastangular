@@ -16,6 +16,8 @@ import { PlotlyModule } from 'angular-plotly.js';
 import { GraphsComponent } from './graphs/graphs.component';
 import { BevaregesComponent } from './bevareges/bevareges.component';
 import { ParentCComponent } from './parent-c/parent-c.component';
+import { AppParentComponent } from './app-parent/app-parent.component';
+import { AppChildComponent } from './app-child/app-child.component';
 
 PlotlyModule.plotlyjs = PlotlyJs;
 
@@ -30,6 +32,8 @@ PlotlyModule.plotlyjs = PlotlyJs;
     GraphsComponent,
     BevaregesComponent,
     ParentCComponent,
+    AppParentComponent,
+    AppChildComponent,
   ],
   imports: [
     BrowserModule,
