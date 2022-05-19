@@ -11,6 +11,8 @@ import { BevaregesComponent } from './bevareges/bevareges.component';
 import { ParentCComponent } from './parent-c/parent-c.component';
 import { AppChildComponent } from './app-child/app-child.component';
 import { AppParentComponent } from './app-parent/app-parent.component';
+import { ImageCompressComponent } from './image-compress/image-compress.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'parentC', component: ParentCComponent },
   { path: 'app-child', component: AppChildComponent },
   { path: 'app-parents', component: AppParentComponent },
+  { path: 'image-compress', component: ImageCompressComponent },
+  { path: 'youtube', component: YoutubeComponent },
 ];
 
 @NgModule({

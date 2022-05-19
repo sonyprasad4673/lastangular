@@ -1,0 +1,13 @@
+<div class="container">
+    <header>
+        <h1>Compress image in Angular </h1>
+    </header>
+
+    <section>
+        <button (click)="compressFile()"> Upload and Compress Image</button>
+
+        <img *ngIf="imgResultBeforeCompress" [src]="imgResultBeforeCompress" />
+        <img *ngIf="imgResultAfterCompress" [src]="imgResultAfterCompress" />
+    </section>
+
+</div>
