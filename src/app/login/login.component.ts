@@ -5,10 +5,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { GoogleApiService, UserInfo } from '../google-api.service';
+import { UserInfo } from '../google-api.service';
 import { forbiddenNameValidator } from '../user-name.validator';
 import { lastValueFrom } from 'rxjs';
 import { AuthServiceService } from '../auth-service.service';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 
 
 @Component({
@@ -23,23 +24,19 @@ export class LoginComponent implements OnInit {
   userInfo?: UserInfo
   mailSnippets: string[] = [];
 
+  user!: SocialUser;
+  loggedIn!: boolean;
+
   constructor(
     private formBuilder: FormBuilder,
-    private readonly googleApi: AuthServiceService) {
+    private readonly googleApi: AuthServiceService, private authService: SocialAuthService) {
     this.googleApi.userProfileSubject.subscribe((info: any) => {
       console.log('==========', info);
 
       this.userInfo = info
     })
+   
   }
-
-  // isLoggedIn(): boolean {
-  //   return this.googleApi.isLoggedIn();
-  // }
-
-  // logout() {
-  //   this.googleApi.signOut();
-  // }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -73,7 +70,13 @@ export class LoginComponent implements OnInit {
       confirmPassword: ['', Validators.required],
       acceptTerms: [false, Validators.requiredTrue],
     });
+
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
+  
 
 
   get f(): { [key: string]: AbstractControl } {
@@ -137,5 +140,16 @@ export class LoginComponent implements OnInit {
       })
     });
   }
+  signwithFB(): void{
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID)
+  }
+
+  signOut() : void{
+    this.authService.signOut();
+  }
 
 }
+function refreshToken() {
+  throw new Error('Function not implemented.');
+}
+

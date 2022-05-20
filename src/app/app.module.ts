@@ -20,11 +20,9 @@ import { AppParentComponent } from './app-parent/app-parent.component';
 import { AppChildComponent } from './app-child/app-child.component';
 import { ImageCompressComponent } from './image-compress/image-compress.component';
 import {
-  FacebookLoginProvider,
-  GoogleLoginProvider,
-  SocialAuthServiceConfig,
-  SocialLoginModule,
+  FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule
 } from 'angularx-social-login';
+
 
 import { YoutubeComponent } from './youtube/youtube.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
@@ -58,7 +56,22 @@ PlotlyModule.plotlyjs = PlotlyJs;
     HttpClientModule,
     OAuthModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide : 'SocialAuthServiceConfig',
+      useValue: {
+        autologin: false,
+        providers: [
+          {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('1049217402677467')
+          }],
+          onError: (err: any) => {
+            console.error(err);
+          }
+        } as SocialAuthServiceConfig
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
