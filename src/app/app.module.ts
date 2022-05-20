@@ -27,6 +27,7 @@ import {
 } from 'angularx-social-login';
 
 import { YoutubeComponent } from './youtube/youtube.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 PlotlyModule.plotlyjs = PlotlyJs;
 
@@ -55,6 +56,7 @@ PlotlyModule.plotlyjs = PlotlyJs;
     PlotlyModule,
     SocialLoginModule,
     HttpClientModule,
+    OAuthModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

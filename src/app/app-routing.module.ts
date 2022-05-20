@@ -15,11 +15,11 @@ import { ImageCompressComponent } from './image-compress/image-compress.componen
 import { YoutubeComponent } from './youtube/youtube.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/home' },
+  // { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'home', component: HomeComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'graphs', component: GraphsComponent },
   { path: 'bevarges', component: BevaregesComponent },

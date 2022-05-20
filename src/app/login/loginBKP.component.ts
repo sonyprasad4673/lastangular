@@ -33,13 +33,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  // isLoggedIn(): boolean {
-  //   return this.googleApi.isLoggedIn();
-  // }
+  isLoggedIn(): boolean {
+    return this.googleApi.isLoggedIn();
+  }
 
-  // logout() {
-  //   this.googleApi.signOut();
-  // }
+  logout() {
+    this.googleApi.signOut();
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -105,37 +105,26 @@ export class LoginComponent implements OnInit {
     console.log(JSON.stringify(this.form.value, null, 2));
   }
 
+  async getEmails() {
+    if (!this.userInfo) {
+      return;
+    }
+    const userId = this.userInfo?.info.sub as string;
+    let messages: any = await lastValueFrom(this.googleApi.emails(userId));
+    messages?.messages.forEach((element: any) => {
+      let mail = lastValueFrom(this.googleApi.getMail(userId, element.id));
+      mail.then((res: any) => {
+        this.mailSnippets.push(res.snippet);
+      });
+    });
+  }
+
   logingm(): void {
-    this.googleApi.googlemaillogin();
+    // this.googleApi.googlemaillogin();
   }
 
   onReset(): void {
     this.submitted = false;
     this.form.reset();
   }
-
-
-  isLoggedIn(): boolean {
-    return this.googleApi.isLoggedIn()
-  }
-
-  logout() {
-    this.googleApi.signOut()
-  }
-
-  async getEmails() {
-    if (!this.userInfo) {
-      return;
-    }
-
-    const userId = this.userInfo?.info.sub as string
-    const messages = await lastValueFrom(this.googleApi.emails(userId))
-    messages.messages.forEach((element: any) => {
-      const mail = lastValueFrom(this.googleApi.getMail(userId, element.id))
-      mail.then(mail => {
-        this.mailSnippets.push(mail.snippet)
-      })
-    });
-  }
-
 }
