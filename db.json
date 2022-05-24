@@ -1,0 +1,68 @@
+{
+    "Users":[
+        {
+            "id":1,
+            "firstName": "Virat",
+            "lastName": "Kohli",
+            "email": "virat@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":2,
+            "firstName": "rohit",
+            "lastName": "rohit",
+            "email": "rohit@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":3,
+            "firstName": "msdhoni",
+            "lastName": "msdhoni",
+            "email": "Mahi@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":4,
+            "firstName": "VeeruBhai",
+            "lastName": "Veeru",
+            "email": "Veeru@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":5,
+            "firstName": "Sachin",
+            "lastName": "Sachin",
+            "email": "sachin@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":6,
+            "firstName": "Yuvi",
+            "lastName": "yuvi",
+            "email": "Yuvi@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":7,
+            "firstName": "raina",
+            "lastName": "raina",
+            "email": "raina@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        },
+        {
+            "id":8,
+            "firstName": "hardhik",
+            "lastName": "Hardhik",
+            "email": "hardhik@gmail.com",
+            "mobile":"9010712115",
+            "salary":"150000"
+        }
+    ]
+}

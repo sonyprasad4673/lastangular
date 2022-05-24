@@ -1,0 +1,22 @@
+<div class="container text-center">
+    <h1>Angular Lifecycle hooks</h1>
+</div>
+
+<div>
+    <!-- custom directive method for place the child component -->
+    <app-app-child *ngIf="isVisible" [myNumber]="counter"></app-app-child>
+    <!-- <p>{{myNumber}}</p> -->
+    <div class="row">
+        <div class="col-md-6 text-center"><button type="button" class="btn btn-primary" (click)="increment()">
+                +1</button></div>
+        <div class="col-md-6 text-center"><button type="button" class="btn btn-primary" (click)="decrement()">
+                -1</button></div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12 text-center"> <button type="button" class="btn btn-warning" (click)="switchVisibility()">
+                Destroyed</button></div>
+
+    </div>
+
+</div>
