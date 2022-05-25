@@ -28,11 +28,5 @@ this.users = this.users.filter(res =>{
 });
   }
 }
-key: string = 'id';
-reverse : boolean= false;
-sort(key) {
-  this.key = key;
-  this.reverse = !this.reverse
-}
 
 }
