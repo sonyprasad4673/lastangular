@@ -1,5 +1,5 @@
 
-<h1>Employee Dashboard</h1>
+<h1>Employee Dashboards</h1>
 <nav class="navbar mt-3">
     <input class="form-contror" type="text" name="firstName" [(ngModel)]="firstName" (ngModelChange)="Search()"
      placeholder="Enter first Name to search">
@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let users of users">
+        <tr *ngFor = "let users of users | orderBy : key: reverse">
             <td>{{users.id}}</td>
             <td>{{users.firstName}}</td>
             <td>{{users.lastName}}</td>
