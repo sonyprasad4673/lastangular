@@ -1,0 +1,40 @@
+<div class="container text-center">
+    <h1>
+        {{title}}!
+    </h1>
+</div>
+
+<!-- Button to clear selection -->
+<!-- <button (click)="clearSelection()">Clear Selection</button> -->
+<div class="container">
+    <label for="">Filter :</label>
+    <input type="text" id="filter-text-box" class="ms-2" placeholder="Filter..." (input)="onFilterTextBoxChanged()" />
+</div>
+
+<div class="container text-center" style="font-size:larger;background-color:rgb(201, 192, 255)">
+    Selection:
+    <span id="selectedRows"></span>
+</div>
+<!-- <div class="example-header">
+    Selection:
+    <span id="selectedRows"></span>
+  </div> -->
+
+<div class="container">
+    <ag-grid-angular style="width: 1500px; height: 100vh;" class="ag-theme-alpine-dark" [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef" [suppressAggFuncInHeader]="true" [rowSelection]="rowSelection"
+        [autoGroupColumnDef]="autoGroupColumnDef" [rowData]="rowData" (selectionChanged)="onSelectionChanged()"
+        (gridReady)="onGridReady($event)" [groupDisplayType]="groupDisplayType"
+        [autoGroupColumnDef]="autoGroupColumnDef" [columnHoverHighlight]="true" [suppressRowHoverHighlight]="true"
+        rowGroupPanelShow="always"></ag-grid-angular>
+    <!-- if we want the multi selection with one click  -->
+    <!-- [rowMultiSelectWithClick]="true" -->
+    <!-- //   [frameworkComponents]="frameworkComponents" -->
+
+</div>
+<div class="conatiner text-center">
+    <button (click)="onBtExport()" class="m-auto" style="margin-bottom: 5px; font-weight: bold;"> Export to
+        Excel</button>
+
+    <button (click)="onBtnExportCsv()" class=" ms-5">Download CSV export file</button>
+</div>
